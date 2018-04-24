@@ -1,0 +1,16 @@
+{
+  "name": "listen-button",
+  "version": "0.0.1",
+  "description": "A widget making access to your media through the PSTN",
+  "main": "widget.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "uglifyjs src/widget.js -o dist/widget.js -c"
+  },
+  "dependencies": {
+    "uglify-js": "^3.3.22"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1"
+  }
+}
