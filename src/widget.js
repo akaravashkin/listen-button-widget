@@ -1,18 +1,32 @@
 /* globals document, XMLHttpRequest */
 
 (function() {
+  function formatPhoneNumber(numStr) {
+    if (numStr) {
+      if (numStr.match(/^1/)) {
+        numStr = numStr.substring(1);
+        numStr = '(' + numStr.substr(0, 3) + ') ' + numStr.substr(3, 3) + ' ' + numStr.substr(6, 4);
+      } else {
+        numStr = '+' + numStr;
+      }
+    }
+
+    return numStr;
+  }
+
   function loadPhoneNumber(mediaURL, cb) {
-    var url = 'https://httpbin.org/get?q=' + encodeURIComponent(mediaURL);
+    var url = 'http://qa-devvm.int:8010/create';
     var request = new XMLHttpRequest();
-    request.open('GET', url, true);
+    request.open('POST', url, true);
+    request.setRequestHeader('Content-type', 'application/json');
     request.onload = function() {
       if (request.status === 200) {
-        // var data = JSON.parse(request.responseText);
-        // cb(data);
-        cb('(999) 999 9999');
+        var data = JSON.parse(request.responseText);
+        cb(formatPhoneNumber(data.phonenumber));
       }
     };
-    request.send();
+
+    request.send(JSON.stringify({ url: mediaURL }));
   }
 
   var widgetNodes = document.getElementsByClassName('listen-button-widget');
