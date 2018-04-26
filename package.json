@@ -5,7 +5,7 @@
   "main": "widget.js",
   "license": "MIT",
   "scripts": {
-    "build": "uglifyjs src/widget.js -o dist/widget.js -c"
+    "build": "uglifyjs src/widget.js -o dist/widget.js -c -m"
   },
   "dependencies": {
     "uglify-js": "^3.3.22"

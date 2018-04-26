@@ -15,7 +15,7 @@
   }
 
   function loadPhoneNumber(mediaURL, cb) {
-    var url = 'http://qa-devvm.int:8010/create';
+    var url = 'https://qa-dialinstream.int/create';
     var request = new XMLHttpRequest();
     request.open('POST', url, true);
     request.setRequestHeader('Content-type', 'application/json');
