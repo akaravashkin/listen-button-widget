@@ -71,7 +71,7 @@
 
     <hr />
 
-    <h4>Programmatic use with custom selector (optional)</h4>
+    <h4>Programmatic use with custom selector and config (optional)</h4>
 
     <div class="my-custom-container" data-src="https://storage.carrierx.com/c/f1f0f514-d5b8-4ed1-8ba1-7e30068671f4/santa_welcome.mp3"></div>
 
@@ -79,18 +79,22 @@
     <code>
       &lt;div class="my-custom-container"&gt;&lt;/div&gt;<br />
         &lt;script&gt;<br />
+          window.onload = function() {<br />
           &nbsp;&nbsp;window.ListenButtonWidget.init('.my-custom-container',<br />
           &nbsp;&nbsp;&nbsp;&nbsp;src: 'https://storage.carrierx.com/c/f1f0f514-d5b8-4ed1-8ba1-7e30068671f4/santa_welcome.mp3',<br />
           &nbsp;&nbsp;&nbsp;&nbsp;text: 'I\'m a programmer'<br />
           &nbsp;&nbsp;});<br />
+          }<br />
         &lt;/script&gt;
     </code>
 
     <script>
-      window.ListenButtonWidget.init('.my-custom-container', {
-        src: 'https://storage.carrierx.com/c/f1f0f514-d5b8-4ed1-8ba1-7e30068671f4/santa_welcome.mp3',
-        text: 'I\'m a programmer'
-      });
+      window.onload = function() {
+        window.ListenButtonWidget.init('.my-custom-container', {
+          src: 'https://storage.carrierx.com/c/f1f0f514-d5b8-4ed1-8ba1-7e30068671f4/santa_welcome.mp3',
+          text: 'I\'m a programmer'
+        });
+      }
     </script>
 
     <!-- <script src="widget.js"></script> -->
