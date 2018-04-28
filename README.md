@@ -48,3 +48,9 @@ Customize everything you need through CSS:
   background-color: #17b517;
 }
 ```
+
+### Build from source
+
+Use NPM or Yarn:
+
+```yarn build```
