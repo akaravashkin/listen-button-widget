@@ -15,9 +15,14 @@
       .listen-button-widget.customized .lbw-phone-number {
         color: #5586f5;
       }
+
+      .listen-button-widget.customized .lbw-spinner > div {
+        background-color: #5586f5;
+      }
     </style>
   </head>
   <body>
+
     <h4>Usage:</h4>
     <code>
       &lt;script src="../dist/widget.js"&gt;&lt;/script&gt;
@@ -58,9 +63,35 @@
         &nbsp;&nbsp;.listen-button-widget.customized .lbw-phone-number {<br />
           &nbsp;&nbsp;&nbsp;&nbsp;color: #5586f5;<br />
         &nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;.listen-button-widget.customized .lbw-spinner > div {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;background-color: #5586f5;<br />
+        &nbsp;&nbsp;}<br />
       &lt;/style&gt;
     </code>
 
+    <hr />
+
+    <h4>Programmatic use with custom selector (optional)</h4>
+
+    <div class="my-custom-container" data-src="https://storage.carrierx.com/c/f1f0f514-d5b8-4ed1-8ba1-7e30068671f4/santa_welcome.mp3"></div>
+
+    <h5>Source code:</h5>
+    <code>
+      &lt;div class="my-custom-container"&gt;&lt;/div&gt;<br />
+        &lt;script&gt;<br />
+          &nbsp;&nbsp;window.ListenButtonWidget.init('.my-custom-container',<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;src: 'https://storage.carrierx.com/c/f1f0f514-d5b8-4ed1-8ba1-7e30068671f4/santa_welcome.mp3',<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;text: 'I\'m a programmer'<br />
+          &nbsp;&nbsp;});<br />
+        &lt;/script&gt;
+    </code>
+
+    <script>
+      window.ListenButtonWidget.init('.my-custom-container', {
+        src: 'https://storage.carrierx.com/c/f1f0f514-d5b8-4ed1-8ba1-7e30068671f4/santa_welcome.mp3',
+        text: 'I\'m a programmer'
+      });
+    </script>
 
     <!-- <script src="widget.js"></script> -->
     <script src="../dist/widget.js"></script>
