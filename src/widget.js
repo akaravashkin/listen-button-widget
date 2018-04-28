@@ -43,11 +43,6 @@
     for (var i = 0; i < widgetNodes.length; i++) {
       var parentNode = widgetNodes[i];
 
-      // add parent class name if custom selector is used (for programmatic use)
-      // if (parentNode.className.indexOf('listen-button-widget') === -1) {
-      //   parentNode.className = parentNode.className + ' listen-button-widget';
-      // }
-
       // prevent double render
       if (parentNode.firstChild) {
         return false;
@@ -83,7 +78,7 @@
   var cssTag = document.createElement('style');
   cssTag.innerHTML = '\
   @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:700");\
-  button.lbw-listen-button{font-family: "Roboto Slab", serif;background-color: #FF5A36;color: #fff;font-size: 14px;line-height: 32px;margin: 0 5px;border-radius: 100px;padding: 0 20px;text-align: center;border:0;cursor:pointer;}\
+  button.lbw-listen-button{font-family: "Roboto Slab", serif;height:32px;background-color: #FF5A36;color: #fff;font-size: 14px;line-height: 32px;margin: 0 5px;border-radius: 100px;padding: 0 20px;text-align: center;border:0;cursor:pointer;}\
   button.lbw-listen-button:focus{outline: 0;}\
   button.lbw-listen-button:active{outline: 0; box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);}\
   a.lbw-phone-number{font-family: "Roboto Slab", serif; font-size: 22px;color: #FF5A36;text-decoration:none}\
